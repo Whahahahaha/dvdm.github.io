@@ -84,17 +84,40 @@
           <figcaption class="meta" style="padding:.5rem">Georgian Mountains</figcaption>
         </figure>
       </div>
-      
-      <div id="lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="">
-      </div>
-
     </section>
   </main>
 
   <footer>
     <small>Static single‑page site. Update text in <code>index.html</code>, styles in <code>styles.css</code>, and images in <code>/images</code>.</small>
   </footer>
+
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  
+<script>
+    document.querySelectorAll('.lightbox-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        lbImg.src = this.href;
+        lb.classList.add('visible');
+      });
+    });
+
+    document.querySelector('.lightbox-close').addEventListener('click', () => {
+      document.getElementById('lightbox').classList.remove('visible');
+    });
+
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if (e.target.id === 'lightbox') {
+        document.getElementById('lightbox').classList.remove('visible');
+      }
+    });
+  </script>
+
 </body>
 </html>
