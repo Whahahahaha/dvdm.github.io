@@ -25,23 +25,20 @@ ul.timeline li:last-child{border-bottom:none}
 */
 
 /* PHOTO GRID — wider cards */
-/*
 .photos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* wider width */
-/*
-gap: 1rem;
+  gap: 1rem;
 }
-*/
+
 /* PHOTO CARD — 16:9 aspect ratio */
-/*
 .photo-card {
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
   background: #0b1220;
 }
-*/
+
 .photo-card img {
   width: 100%;
   aspect-ratio: 16 / 9;       /* enforce 16:9 aspect ratio */
